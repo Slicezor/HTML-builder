@@ -38,32 +38,11 @@ function getInput() {
     })
   }
   addToFile()
-}
-
-
-
   
-  // const rl = readline.createInterface({ input, output })
-
-  // rl.question("Enter text to add to the file: ", (text) => {
-  //   if ((text.toLowerCase()) == "exit") text = "exit"
-
-  //   while (true) {
-  //     switch (text) {
-  //       case 'exit': {
-  //         console.log("Thank you! Goodbye")
-  //         rl.close()
-  //         process.exit(0)
-  //       }
-  //       default: {
-  //         fs.appendFile(`${path.join('02-write-file', 'text.txt')}`, text, (error) => {
-  //           if (error) { throw error }
-  //           console.log("Successful. The data is recorded")
-  //         })
-  //         break
-  //         console.log(text)
-  //       }
-  //     }
-  //   }
-  // })
+  rl.on('SIGINT', function() {
+    console.log("\nThank you! Goodbye\n")
+    rl.close()
+    process.exit()
+  })
+}
 
